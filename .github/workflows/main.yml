@@ -13,11 +13,10 @@ jobs:
       with:
         node-version: '10.x'
         registry-url: 'https://registry.npmjs.org'
+    - run: apt-get install -y python3
+    - run: npm install -g serverless
     - run: npm install
-    - name: serverless deploy
-      uses: serverless/github-action@master
-      with:
-        args: deploy
+    - run: serverless deploy
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
