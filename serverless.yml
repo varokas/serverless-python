@@ -17,4 +17,4 @@ plugins:
   - serverless-python-requirements
 custom:
   pythonRequirements:
-    dockerizePip: true
+    dockerizePip: non-linux
