@@ -8,7 +8,7 @@ jobs:
     name: deploy
     runs-on: ubuntu-latest
     steps:
-    - run: apt-get install -y docker
+    - run: sudo apt-get install -y docker
     - uses: actions/checkout@master
     - uses: actions/setup-node@v1
       with:
