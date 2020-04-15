@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: npm install
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
-         args: install
-         node-version: '10.x'
+        node-version: '10.x'
+        registry-url: 'https://registry.npmjs.org'
+    - run: npm install
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
