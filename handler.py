@@ -3,7 +3,7 @@ import json
 import numpy as np
 
 def hello(event, context):
-    a = np.arange(10)
+    a = np.arange(15)
 
     response = {
         "statusCode": 200,
