@@ -13,7 +13,9 @@ jobs:
       with:
         node-version: '10.x'
         registry-url: 'https://registry.npmjs.org'
-    - run: sudo apt-get install -y python3
+    - run: sudo apt update && sudo apt install -y software-properties-common
+    - run: sudo add-apt-repository ppa:deadsnakes/ppa
+    - run: sudo apt-get install -y python3.8
     - run: npm install -g serverless
     - run: npm install
     - run: serverless deploy
