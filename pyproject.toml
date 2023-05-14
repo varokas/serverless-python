@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "serverless-python"
+version = "0.1.0"
+description = ""
+authors = ["y"]
+readme = "README.md"
+packages = [{include = "serverless_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.95.1"
+uvicorn = "^0.22.0"
+mangum = "^0.17.0"
+boto3 = "^1.26.133"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
