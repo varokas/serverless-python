@@ -3,13 +3,17 @@ from mangum import Mangum
 import boto3
 from botocore.config import Config
 import json
+import os
 
 from params_aws import params_aws
 from params_aws import model
 
 REGION="ap-southeast-1"
 
-app = FastAPI(title="python-serverless")
+STAGE = os.environ.get('STAGE')
+root_path = '/' if not STAGE else f'/{STAGE}'
+
+app = FastAPI(title="python-serverless", root_path=root_path)
 
 @app.get("/hello")
 def hello():
